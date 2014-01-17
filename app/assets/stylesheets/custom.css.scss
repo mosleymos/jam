@@ -5,9 +5,41 @@
 
 /*layout*/
 
+/*header*/
+
+.top-bar {
+	height: 50px;
+}
+
 .iconenav {
 	font-size: 1.8em;
 	margin-right: 5px;
-	line-height: 1em;
-	
+	line-height: 45px;	
 	}
+
+	/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+.samplecontainer {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	text-align: center;
+}
+
+.samplecontainer h1 {
+  color: #C91010;
+  font-weight: bold;
+}

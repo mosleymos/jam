@@ -1,10 +1,12 @@
 Jam::Application.routes.draw do
-  
-  
-  get "pages_statiques/home"
-  get "pages_statiques/landing"
+  root 'pages_statiques#landing'
+  match 'home', to: 'pages_statiques#home', via: 'get'
+  match 'landing', to: 'pages_statiques#landing', via: 'get'
+  match 'apropos', to: 'pages_statiques#apropos', via: 'get'
+  match 'mentionslegales', to: 'pages_statiques#mentionslegales', via: 'get'
+  match 'contact', to: 'pages_statiques#contact', via: 'get'
+  match 'blog', to: 'pages_statiques#blog', via: 'get'
 
-  root "pages_statiques#landing"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
