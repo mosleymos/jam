@@ -1,4 +1,6 @@
 Jam::Application.routes.draw do
+  resources :users
+
   root 'pages_statiques#landing'
   match 'home', to: 'pages_statiques#home', via: 'get'
   match 'landing', to: 'pages_statiques#landing', via: 'get'
