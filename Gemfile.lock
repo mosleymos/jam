@@ -41,7 +41,7 @@ GEM
     foundation-icons-sass-rails (3.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
-    foundation-rails (5.0.2.0)
+    foundation-rails (5.0.3.1)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     hike (1.2.3)
@@ -79,7 +79,7 @@ GEM
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
-    sass (3.2.13)
+    sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
@@ -87,6 +87,12 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    spork (1.0.0rc4)
+    spork-rails (4.0.0)
+      rails (>= 3.0.0, < 5)
+      spork (>= 1.0rc0)
+    spork-testunit (0.0.8)
+      spork (>= 0.6.0)
     sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -125,6 +131,9 @@ DEPENDENCIES
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc
+  spork
+  spork-rails
+  spork-testunit
   sqlite3
   turbolinks
   turn

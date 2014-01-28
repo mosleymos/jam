@@ -39,7 +39,10 @@ group :doc do
 end
 
 group :test do
-	gem 'turn' #ajoute des couleurs lors de l'exécution de rake test
+	gem 'turn'
+	gem 'spork'
+	gem 'spork-rails'
+	gem 'spork-testunit'
 end
 
 

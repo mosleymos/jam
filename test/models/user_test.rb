@@ -6,12 +6,12 @@ class UserTest < ActiveSupport::TestCase
 		@user=User.new( { email:"bob@example.com", pseudo:"bob", age:18, sexe:"masculin", ville:"Paris"} )
 	end
 
-	def test_presence_email
+	test "presence_email" do
 		@user.email =" "
 		assert !@user.save, "Saved the user without an email"
 	end
 
-	def test_mauvais_format_email
+	test "mauvais_format_email" do
 		badmail = %w[user@foo,com user_at_foo.org example.user@foo.
                      foo@bar_baz.com foo@bar+baz.com]
 		badmail.each do |m|
@@ -20,7 +20,7 @@ class UserTest < ActiveSupport::TestCase
 		end	
 	end	
 
-	def test_bon_format_email
+	test "bon_format_email" do
 		goodmail = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
 		goodmail.each do |b|
 			@user.email=b
@@ -28,33 +28,33 @@ class UserTest < ActiveSupport::TestCase
 		end	
 	end	
 
-	def test_presence_pseudo
+	test "presence_pseudo" do
 		@user.pseudo =" "
 		assert !@user.save, "Saved the user without a pseudo"
 	end
 
-	def test_email_unique
+	test "email_unique" do
 		user_with_same_email = @user.dup
 		@user.save
         assert !user_with_same_email.save, "email déjà utilisé" 
 	end
 
-	def test_longueur_pseudo
+	test "longueur_pseudo" do
 		@user.pseudo = "a"*26
 		assert !@user.save, "pseudo trop long"
 	end	
 
-	def test_presence_age
+	test "presence_age" do
 		@user.age =" "
 		assert !@user.save, "Saved the user without an age"
 	end
 
-	def test_presence_sexe
+	test "presence_sexe" do
 		@user.sexe =" "
 		assert !@user.save, "Saved the user without a sexe"
 	end
 
-	def test_presence_ville
+	test "presence_ville" do
 		@user.ville =" "
 		assert !@user.save, "Saved the user without a city"
 	end
