@@ -1,8 +1,122 @@
 <div class="row">
-	<div class="small-6 small-centered columns samplecontainer">
-		<h1>Profil</h1>
-		<%= @user.pseudo %></br>
-		<%= @user.age %>ans</br>
-		<%= @user.ville %></br>
+
+	<div class="small-4 columns bloc_pseudo">
+		<h1><%= @user.pseudo %></h1>
 	</div>
+
+	<div class="small-4 small-offset-4 columns info_connexion">
+		<p>Dernière connexion</p>
+	</div>
+
+</div>
+
+<div class="row">
+
+	<div class="small-4 columns">
+		<img src="/bobby.jpg"></img>
+	</div>
+
+	<div class="small-4 columns">
+		<p>Annonce Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+	</div>
+
+	<div class="small-4 columns bloc_info">
+
+		<div class="row">
+
+			<div class="small-6 columns">
+
+				<ul>
+
+					<li>Age</li>
+					<li>Sexe</li>
+					<li>Orientation</li>
+					<li>Ville</li>
+					<li>Cheveux</li>
+					<li>Yeux</li>
+					<li>Taille</li>
+					<li>Type physique</li>
+					<li>Profession</li>
+					<li>Religion</li>
+					<li>Signe astral</li>
+
+				</ul>
+
+			</div>
+
+			<div class="small-6 columns">
+
+				<ul>
+
+					<li><%= @user.age %> ans</li>
+					<li><%= @user.sexe %></li>
+					<li>---</li>
+					<li><%= @user.ville %></li>
+					<li>---</li>
+					<li>---</li>
+					<li>---</li>
+					<li>---</li>
+					<li>---</li>
+					<li>---</li>
+					<li>---</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="row">
+
+	<div class="small-8 columns">
+
+		<div class="badges">
+			<h3>Badges</h3>
+			<ul>
+				<li><i class="fi-crown"></i></li>
+				<li><i class="fi-shield"></i></li>
+				<li><i class="fi-foot"></i></li>
+				<li><i class="fi-trophy"></i></li>
+				<li><i class="fi-target-two"></i></li>
+			</ul>
+
+			<ul>
+				<li><i class="fi-skull"></i></li>
+				<li><i class="fi-key"></i></li>
+				<li><i class="fi-sheriff-badge"></i></li>
+				<li><i class="fi-paw"></i></li>
+				<li><i class="fi-music"></i></li>
+			</ul>
+		</div>
+
+		<div>
+			<h3>Tests</h3>
+		</div>
+
+		<div>
+			<h3>Notes</h3>
+		</div>
+
+	</div>
+
+	<div class="small-4 columns">
+
+		<div>
+			<p>Musique</p>
+			<p>Cinéma</p>
+			<p>Séries TV</p>
+			<p>Littérature</p>
+		</div>
+
+		<div>
+			<h3>Contenu</h3></br>
+			<iframe width="300" height="225" src="//www.youtube.com/embed/rlfHcCLn4pk" frameborder="0" allowfullscreen></iframe>
+		</br>
+			<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113781204&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+		</div>
+
+	</div>
+
 </div>

@@ -2,16 +2,20 @@ require 'test_helper'
 
 class PagesStatiquesControllerTest < ActionController::TestCase
 
-	# mauvais tests : vérifient les routes et la présence du path sur la vue...
+	test "intégration du layout sur la home" do
+	  get :home
+	  assert_template :home
+	  assert_template layout: "layouts/application"
+	end
 
-	# test "Route vers a propos" do
-	# 	get :apropos
-	# 	assert_response :success, "Pas de route vers a propos"
-	# end
+	# tests des routes
 
-	# test "Route vers mentions légales" do
-	# 	get :mentionslegales
-	# 	assert_response :success, "Pas de route vers mentions légales"
-	# end
+	test "route vers a propos" do
+		assert_routing '/apropos', {controller: "pages_statiques", action: "apropos"}
+	end
+
+	test "route vers mentions légales" do
+		assert_routing '/mentionslegales', {controller: "pages_statiques", action: "mentionslegales"}
+	end
 
 end
