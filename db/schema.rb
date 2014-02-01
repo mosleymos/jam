@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120133558) do
+ActiveRecord::Schema.define(version: 20140201205105) do
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20140120133558) do
     t.integer  "age"
     t.string   "sexe"
     t.string   "ville"
+    t.string   "orientation"
+    t.string   "cheveux"
+    t.string   "yeux"
+    t.integer  "taille"
+    t.string   "bodytype"
+    t.string   "profession"
+    t.string   "religion"
+    t.string   "astral"
   end
 
 end
