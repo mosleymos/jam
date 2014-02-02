@@ -26,4 +26,8 @@ Jam::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # indication du path de imagemagick pour paperclip
+  Paperclip.options[:command_path] = "/usr/bin/"
+  config.paperclip_defaults = {:local_root => "#{Rails.root}/public"}
 end
