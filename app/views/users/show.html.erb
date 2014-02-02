@@ -4,7 +4,11 @@
 		<h1><%= @user.pseudo %></h1>
 	</div>
 
-	<div class="small-4 small-offset-4 columns info_connexion">
+	<div class="small-4 columns panel bloc_statut">
+		<p>Humeur du jour</p>
+	</div>
+
+	<div class="small-4 columns info_connexion">
 		<p>Dernière connexion</p>
 	</div>
 
@@ -45,23 +49,19 @@
 			</div>
 
 			<div class="small-6 columns">
-
 				<ul>
-
-					<li><%= @user.age %> ans</li>
-					<li><%= @user.sexe %></li>
-					<li>---</li>
-					<li><%= @user.ville %></li>
-					<li>---</li>
-					<li>---</li>
-					<li>---</li>
-					<li>---</li>
-					<li>---</li>
-					<li>---</li>
-					<li>---</li>
-
+					<li><%= @user.age || "---" %> ans</li>
+					<li><%= @user.sexe || "---" %></li>
+					<li><%= @user.orientation || "---" %></li>
+					<li><%= @user.ville || "---" %></li>
+					<li><%= @user.cheveux || "---" %></li>
+					<li><%= @user.yeux || "---" %></li>
+					<li><%= @user.taille || "---" %></li>
+					<li><%= @user.bodytype || "---" %></li>
+					<li><%= @user.profession || "---" %></li>
+					<li><%= @user.religion || "---" %></li>
+					<li><%= @user.astral || "---" %></li>
 				</ul>
-
 			</div>
 
 		</div>
@@ -74,29 +74,169 @@
 
 		<div class="badges">
 			<h3>Badges</h3>
-			<ul>
-				<li><i class="fi-crown"></i></li>
-				<li><i class="fi-shield"></i></li>
-				<li><i class="fi-foot"></i></li>
-				<li><i class="fi-trophy"></i></li>
-				<li><i class="fi-target-two"></i></li>
-			</ul>
+			<div class="row">
+				<div class="small-2 small-offset-1 columns">
+					<i class="fi-crown"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-shield"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-megaphone"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-trophy"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-target-two"></i>
+				</div>
+				<div class="small-1 columns"></div>
+			</div>
 
-			<ul>
-				<li><i class="fi-skull"></i></li>
-				<li><i class="fi-key"></i></li>
-				<li><i class="fi-sheriff-badge"></i></li>
-				<li><i class="fi-paw"></i></li>
-				<li><i class="fi-music"></i></li>
-			</ul>
+			<div class="row">
+				<div class="small-2 small-offset-1 columns">
+					<i class="fi-skull"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-sheriff-badge"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-paw"></i>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-music"></i>
+				</div>
+				<div class="small-3 columns"></div>
+			</div>
+			
 		</div>
 
-		<div>
+		<div class="tests">			
 			<h3>Tests</h3>
+			<div class="row">
+				<div class="small-2 small-offset-1 columns">
+					<i class="fi-lock"></i>
+					<p>Séduction</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-lock"></i>
+					<p>Sexo</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-lock"></i>
+					<p>Couple</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-lock"></i>
+					<p>Ethique</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-lock"></i>
+					<p>Lyfestyle</p>
+				</div>
+				<div class="small-1 columns"></div>
+			</div>
 		</div>
 
-		<div>
+		<div class="notes">
 			<h3>Notes</h3>
+			<div class="row">
+				<div class="small-3 columns">
+					<p>Fidélité du profil</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-3 small-offset-1 columns">
+					<p>Humour</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-1 columns"></div>
+			</div>
+
+			<div class="row">
+				<div class="small-3 columns">
+					<p>Conversation</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-3 small-offset-1 columns">
+					<p>Initiative</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-1 columns"></div>
+			</div>
+
+			<div class="row">
+				<div class="small-3 columns">
+					<p>Partage</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-3 small-offset-1 columns">
+					<p>Surprise</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-1 columns"></div>
+			</div>
+
+			<div class="row">
+				<div class="small-3 columns">
+					<p>Energie</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-3 small-offset-1 columns">
+					<p>Ecoute</p>
+				</div>
+				<div class="small-2 columns">
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+					<i class="fi-star"></i>
+				</div>
+				<div class="small-1 columns"></div>
+			</div>
+
+
 		</div>
 
 	</div>
@@ -110,10 +250,10 @@
 			<p>Littérature</p>
 		</div>
 
-		<div>
-			<h3>Contenu</h3></br>
+		<div class="contenu">
+			<h3>Contenu</h3>
 			<iframe width="300" height="225" src="//www.youtube.com/embed/rlfHcCLn4pk" frameborder="0" allowfullscreen></iframe>
-		</br>
+		
 			<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113781204&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
 		</div>
 

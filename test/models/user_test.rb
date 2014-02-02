@@ -59,4 +59,10 @@ class UserTest < ActiveSupport::TestCase
 		assert !@user.save, "Saved the user without a city"
 	end
 
+	# test "bon type de sexe" do
+	# 	assert_block do
+	# 		["masculin", "feminin", "autre"].any? {|b| @user.sexe == b }
+	# 	end
+	# end
+
 end

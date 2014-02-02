@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
 		uniqueness: true
 	validates :pseudo, presence: true, length: { maximum: 25 }
 	validates :age, presence: true
-	validates :sexe, presence: true
+	# validates :sexe, presence: true, inclusion: { in: %w(masculin feminin autre)}
 	validates :ville, presence: true
 end

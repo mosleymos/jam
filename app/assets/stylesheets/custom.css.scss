@@ -19,7 +19,8 @@
 	/* footer */
 
 footer {
-  margin-top: 45px;
+  margin-top: 60px;
+  margin-bottom: 30px;
   padding-top: 5px;
   color: #999;
 }
@@ -45,13 +46,27 @@ footer a:hover {
 
 /*page profil*/
 
+ul {
+	list-style: none;
+}
+
+h3 {
+	margin-top: 20px;
+}
+
 .bloc_pseudo {
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
 
 .info_connexion {
-	vertical-align: bottom;
+	margin-top: 80px;
+	margin-bottom: 0px;
+}
+
+.bloc_statut {
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 .bloc_info {
@@ -59,20 +74,39 @@ footer a:hover {
 	padding: 5px;
 }
 
-.bloc_info ul {
-	list-style: none;
-}
-
-.badges ul {
-	list-style: none;
-	margin-bottom: 0px;
-}
-
-.badges li {
-	display: inline;
-	margin-left: 50px;
-}
-
+.badges .row {
+	margin-top: 30px;
+} 
 .badges i {
 	font-size: 3.5em;
+}
+
+.tests .row {
+	margin-top: 30px;
+} 
+
+.tests i {
+	font-size: 5em;
+
+}
+
+/*pb alignement test*/
+.tests .columns {
+	/*display: inline-block;
+	vertical-align: center;*/
+}
+
+/*pb alignement notes*/
+
+.notes i {
+	/*padding-top: 5px;*/
+}
+
+.notes h3 {
+	margin-bottom: 30px;
+}
+
+
+.contenu iframe {
+	margin-top: 20px;
 }
