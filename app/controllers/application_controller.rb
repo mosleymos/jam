@@ -7,9 +7,12 @@ class ApplicationController < ActionController::Base
 
    def after_sign_out_path_for(users)
 	  "/users/sign_in"
-	end
+   end
 
   protected
+
+  # permet d'utiliser les critères pseudo age sexe 
+  # et ville dès la création d'un compte
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :pseudo
