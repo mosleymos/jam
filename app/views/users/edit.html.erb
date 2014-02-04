@@ -11,6 +11,39 @@
           <%= f.file_field :avatar %>
         </div>
 
+        <%= f.label :age %>
+        <%= f.number_field :age %>
+
+        <%= f.label :sexe %>
+        <%= f.text_field :sexe %>
+
+        <%= f.label :orientation %>
+        <%= f.text_field :orientation %>
+
+        <%= f.label :ville %>
+        <%= f.text_field :ville %>
+
+        <%= f.label :cheveux %>
+        <%= f.text_field :cheveux %>
+
+        <%= f.label :yeux %>
+        <%= f.text_field :yeux %>
+
+        <%= f.label :taille %>
+        <%= f.number_field :taille %>
+
+        <%= f.label "Type physique" %>
+        <%= f.text_field :bodytype %>
+
+        <%= f.label :profession %>
+        <%= f.text_field :profession %>
+
+        <%= f.label :religion %>
+        <%= f.text_field :religion %>
+
+        <%= f.label "Signe astral" %>
+        <%= f.text_field :astral %>
+
         <div class="submit">
           <%= f.submit %>
         </div>
