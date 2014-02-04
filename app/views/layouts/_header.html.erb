@@ -11,6 +11,12 @@
 		
 			<!-- Right Nav Section -->
 			<ul class="right">
+				
+				<% if user_signed_in?%>
+					<li><p class="info_connexion">
+					Connecté en tant que <%=current_user.pseudo%>
+					</p></li>
+				<% end %>
 			    <li><a href="<%=home_path%>"><i class="fi-home iconenav"></i></a></li>
 			    <li><a href="/users/1"><i class="fi-torso iconenav"></i></a></li>
 			    <li><a href="#"><i class="fi-magnifying-glass iconenav"></i></a></li>
@@ -20,7 +26,7 @@
 			        <a href="#"><i class="fi-widget iconenav"></i></a>
 			        <ul class="dropdown">
 			          <li><a href="#">Paramètres</a></li>
-			          <li><a href="#">Déconnexion</a></li>
+			          <li><%= link_to('Déconnexion', destroy_user_session_path, :method => :delete) %> </li>
 			        </ul>
 			    </li>
 			</ul>
