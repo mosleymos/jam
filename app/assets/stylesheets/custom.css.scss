@@ -12,6 +12,18 @@
 	margin-top: 5px;
 }
 
+
+.samplecontainer {
+	margin-top: 80px;
+	margin-bottom: 80px;
+	text-align: center;
+}
+
+h1 {
+  color: #C91010;
+  font-weight: bold;
+}
+
 /*header*/
 
 .top-bar {
@@ -48,17 +60,6 @@ footer a {
 
 footer a:hover {
   color: #222;
-}
-
-.samplecontainer {
-	margin-top: 80px;
-	margin-bottom: 80px;
-	text-align: center;
-}
-
-.samplecontainer h1 {
-  color: #C91010;
-  font-weight: bold;
 }
 
 /*page profil*/
@@ -125,4 +126,10 @@ h3 {
 
 .contenu iframe {
 	margin-top: 20px;
+}
+
+/*page recherche*/
+
+.list_users {
+	margin-top: 10px;
 }

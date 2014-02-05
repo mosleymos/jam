@@ -51,18 +51,18 @@
 			</div>
 
 			<div class="small-6 columns">
-				<ul>
-					<li><%= @user.age || "---" %> ans</li>
-					<li><%= @user.sexe || "---" %></li>
-					<li><%= @user.orientation || "---" %></li>
-					<li><%= @user.ville || "---" %></li>
-					<li><%= @user.cheveux || "---" %></li>
-					<li><%= @user.yeux || "---" %></li>
-					<li><%= @user.taille || "---" %></li>
-					<li><%= @user.bodytype || "---" %></li>
-					<li><%= @user.profession || "---" %></li>
-					<li><%= @user.religion || "---" %></li>
-					<li><%= @user.astral || "---" %></li>
+				<ul> 
+					<li><%= if @user.age.present? then @user.age else "---" end%></li>
+					<li><%= if @user.sexe.present? then @user.sexe else "---" end%></li>
+					<li><%= if @user.orientation.present? then @user.orientation else "---" end%></li>
+					<li><%= if @user.ville.present? then @user.ville else "---" end%></li>
+					<li><%= if @user.cheveux.present? then @user.cheveux else "---" end%></li>
+					<li><%= if @user.yeux.present? then @user.yeux else "---" end%></li>
+					<li><%= if @user.taille.present? then @user.taille else "---" end%></li>
+					<li><%= if @user.bodytype.present? then @user.bodytype else "---" end%></li>
+					<li><%= if @user.profession.present? then @user.profession else "---" end%></li>
+					<li><%= if @user.religion.present? then @user.religion else "---" end%></li>
+					<li><%= if @user.astral.present? then @user.astral else "---" end%></li>
 				</ul>
 			</div>
 

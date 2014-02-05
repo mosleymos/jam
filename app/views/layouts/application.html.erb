@@ -13,11 +13,11 @@
   </head>
 
   <body>
-  	<%= render 'layouts/header' %>
+  	<%= if user_signed_in? then render 'layouts/header' end%>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= render 'layouts/footer' %>
+    <%= if user_signed_in? then render 'layouts/footer' end%>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

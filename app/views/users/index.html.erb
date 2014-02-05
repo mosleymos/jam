@@ -1,0 +1,21 @@
+<div class="row">
+
+	<div class="small-6 small-centered column">
+
+	<h1>Liste des utilisateurs</h1>
+
+		<ul>
+			
+			<% @user.each do |u| %>
+
+			<li class="list_users"><%= image_tag u.avatar.url(:thumb) %>	<a href="/users/<%=u.id%>"><%=u.pseudo%></a>
+				<%=u.age%> <%=u.sexe%> <%=u.ville%>
+			</li>
+
+			<%end%>
+
+		</ul>
+
+	</div>
+	
+</div>

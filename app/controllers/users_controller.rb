@@ -4,8 +4,12 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def index
+		@user = User.all
+	end
+		
 	def create
-	 	@user = User.create( user_params )
+	 	@user = User.create(user_params)
 	end
 
 	def show

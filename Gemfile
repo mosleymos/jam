@@ -6,6 +6,8 @@ gem 'foundation-icons-sass-rails'
 gem "paperclip", "~> 3.0"
 gem 'devise'
 
+gem 'pry-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
