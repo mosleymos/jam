@@ -27,8 +27,8 @@
 			    <li class="has-dropdown">
 			        <a href="#"><i class="fi-widget iconenav"></i></a>
 			        <ul class="dropdown">
-			          <li><a href="#">Paramètres</a></li>
-			          <li><%= link_to('Déconnexion', destroy_user_session_path, :method => :delete) %> </li>
+			          <li><%=link_to('Déconnexion', destroy_user_session_path, :method => :delete)%></li>
+			          <li><%=link_to('Détruire', detruire_compte_path, :method => :delete, data: { confirm: "Vraiment?"})%></li>
 			        </ul>
 			    </li>
 			</ul>

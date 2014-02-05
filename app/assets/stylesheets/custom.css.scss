@@ -3,8 +3,6 @@
 /*variables scss*/
 
 
-/*layout*/
-
 /*customization des éléments foundation*/
 
 .button {
@@ -12,6 +10,11 @@
 	margin-top: 5px;
 }
 
+/*layout*/
+
+
+
+/*style temporaires pour la période de dev */
 
 .samplecontainer {
 	margin-top: 80px;
@@ -19,7 +22,7 @@
 	text-align: center;
 }
 
-h1 {
+.samplecontainer h1 {
   color: #C91010;
   font-weight: bold;
 }

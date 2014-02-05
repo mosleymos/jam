@@ -27,6 +27,12 @@ class UsersController < ApplicationController
 		redirect_to @user
 	end
 		
+	def destroy
+		@user = current_user
+		@user.destroy
+		redirect_to new_user_session_path
+	end
+
 	private
 
 	# Use strong_parameters for attribute whitelisting
