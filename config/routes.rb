@@ -1,6 +1,8 @@
 Jam::Application.routes.draw do
   devise_for :users
   resources :users
+  resources :messages
+  resources :conversations
 
   root 'pages_statiques#home'
   match 'home', to: 'pages_statiques#home', via: 'get'
@@ -11,7 +13,6 @@ Jam::Application.routes.draw do
   match 'blog', to: 'pages_statiques#blog', via: 'get'
 
   match 'detruire_compte', to: 'users#destroy', via: 'delete'
-  match 'inbox', to: 'users#inbox', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

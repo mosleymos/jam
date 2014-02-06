@@ -1,0 +1,18 @@
+<div class="row">
+
+  <div class="small-6 small-centered column">
+
+  	<%= form_for @message do |m| %>
+
+  		<%= m.label "Tapez votre message ici" %>
+        <%= m.text_area :body %>
+	  	
+	  	<div class="submit">
+	          <%= m.submit "Envoyer" %>
+        </div>
+
+    <%end%>
+
+  </div>
+
+</div>

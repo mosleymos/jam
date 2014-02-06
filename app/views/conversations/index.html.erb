@@ -1,0 +1,23 @@
+<div class="row">
+
+  <div class="small-6 small-centered column">
+
+  	<h1>Boite mail</h1>
+
+  	<%= render @conversations %>
+
+  	<h2>Nouvelle conversation</h2>
+
+	<h3>Choisir un destinataire</h3>
+	  	<ul>
+		  	<% @user.each do |u| %>
+
+			  	<li class="list_users">
+			  		<input type="checkbox"> <%= image_tag u.avatar.url(:thumb) %> <%=u.name%>
+			  	</li> 
+
+		  	<%end%>
+	  	</ul>
+  </div>
+
+</div>

@@ -33,10 +33,6 @@ class UsersController < ApplicationController
 		redirect_to new_user_session_path
 	end
 
-	def inbox
-		# @user = User.find(params[:id])
-	end
-
 	private
 
 	# Use strong_parameters for attribute whitelisting
