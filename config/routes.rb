@@ -11,7 +11,8 @@ Jam::Application.routes.draw do
   match 'blog', to: 'pages_statiques#blog', via: 'get'
 
   match 'detruire_compte', to: 'users#destroy', via: 'delete'
-
+  match 'inbox', to: 'users#inbox', via: 'get'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

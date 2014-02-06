@@ -8,7 +8,7 @@
 			
 			<% @user.each do |u| %>
 
-			<li class="list_users"><%= image_tag u.avatar.url(:thumb) %>	<a href="/users/<%=u.id%>"><%=u.pseudo%></a>
+			<li class="list_users"><a href="/users/<%=u.id%>"><%= image_tag u.avatar.url(:thumb) %> <%=u.name%></a>
 				<%=u.age%> <%=u.sexe%> <%=u.ville%>
 			</li>
 

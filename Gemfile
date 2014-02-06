@@ -5,6 +5,7 @@ gem 'foundation-icons-sass-rails'
 
 gem "paperclip", "~> 3.0"
 gem 'devise'
+gem 'mailboxer'
 
 gem 'pry-rails'
 

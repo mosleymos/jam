@@ -15,20 +15,20 @@
 				
 				<% if user_signed_in?%>
 					<li><p class="info_connexion">
-					<%=current_user.pseudo%> est connecté(e) 
+					<%=current_user.name%> est connecté(e) 
 					</p></li>
 				<% end %>
 
 			    <li><a href="<%=home_path%>"><i class="fi-home iconenav"></i></a></li>
 			    <li><a href="/users/<%=current_user.id%>"><i class="fi-torso iconenav"></i></a></li>
 			    <li><a href="/users"><i class="fi-magnifying-glass iconenav"></i></a></li>
-			    <li><a href="#"><i class="fi-mail iconenav"></i></a></li>
+			    <li><a href="<%=inbox_path%>"><i class="fi-mail iconenav"></i></a></li>
 			    <li><a href="#"><i class="fi-graph-pie iconenav"></i></a></li>
-			    <li class="has-dropdown">
+			    <li class="has-dropdown not-click">
 			        <a href="#"><i class="fi-widget iconenav"></i></a>
 			        <ul class="dropdown">
 			          <li><%=link_to('Déconnexion', destroy_user_session_path, :method => :delete)%></li>
-			          <li><%=link_to('Détruire', detruire_compte_path, :method => :delete, data: { confirm: "Vraiment?"})%></li>
+			          <li><%=link_to('Détruire compte', detruire_compte_path, :method => :delete, data: { confirm: "Vraiment?"})%></li>
 			        </ul>
 			    </li>
 			</ul>
