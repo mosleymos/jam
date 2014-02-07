@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   # et ville dès la création d'un compte
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :pseudo
+    devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :age
     devise_parameter_sanitizer.for(:sign_up) << :sexe
     devise_parameter_sanitizer.for(:sign_up) << :ville

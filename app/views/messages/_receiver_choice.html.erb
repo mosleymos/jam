@@ -1,0 +1,10 @@
+<ul>
+	<%- @users.each do |u|%>
+		<li>
+			<%= radio_button_tag(:id, u.id) %>
+			<%= image_tag u.avatar.url(:thumb) %>
+			<%= u.name %>
+		</li>
+	<% end %>
+</ul>
+

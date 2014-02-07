@@ -4,20 +4,10 @@
 
   	<h1>Boite mail</h1>
 
-  	<%= render @conversations %>
+  	<%= current_user.mailbox.inbox %>
 
-  	<h2>Nouvelle conversation</h2>
-
-	<h3>Choisir un destinataire</h3>
-	  	<ul>
-		  	<% @user.each do |u| %>
-
-			  	<li class="list_users">
-			  		<input type="checkbox"> <%= image_tag u.avatar.url(:thumb) %> <%=u.name%>
-			  	</li> 
-
-		  	<%end%>
-	  	</ul>
+  	<a href="/messages/new" class="button">Nouveau message</a>
+  	
   </div>
 
 </div>

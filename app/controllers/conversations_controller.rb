@@ -3,9 +3,13 @@ class ConversationsController < ApplicationController
 	def new
 	end
 
-	def index
+	def create
+		@conversation = Conversation.create!
+		redirect_to action: 'index'
+	end
+
+	def indexp
 		@conversations = current_user.mailbox.inbox
-		@user = User.all
 	end
 
 	def show
