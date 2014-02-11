@@ -8,10 +8,10 @@ class ConversationsController < ApplicationController
 		redirect_to action: 'index'
 	end
 
-	def indexp
-		@conversations = current_user.mailbox.inbox
+	def index
 	end
 
 	def show
+		@conversation = Conversation.find(params[:id])
 	end
 end

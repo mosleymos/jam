@@ -2,9 +2,14 @@
 
   <div class="small-6 small-centered column">
 
-  <%= @subject %></br>
-  <%= @message %>
+ 	<% receipts = @conversation.receipts_for current_user %>
 
+	<%receipts.each do |receipt|%>
+		<%message = receipt.message%>
+		<%= image_tag message.sender.avatar.url(:thumb) %> 
+		<%= message.body %>
+	<%end%>
+  
   </div>
 
  </div>

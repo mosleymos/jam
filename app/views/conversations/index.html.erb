@@ -4,7 +4,15 @@
 
   	<h1>Boite mail</h1>
 
-  	<%= current_user.mailbox.inbox %>
+  	<% all_mail = current_user.mailbox.inbox %>
+	<% all_mail.each do |participant| %>
+	    <tr>
+	        <td><%= participant.messages.last.sender.name %></td>
+	        <td><%= participant.messages.last.subject %></td>
+	   </tr>
+	<% end %>
+
+	<br/>
 
   	<a href="/messages/new" class="button">Nouveau message</a>
   	

@@ -9,11 +9,12 @@ class MessagesController < ApplicationController
 		@message = params[:message]
 		@subject = params[:subject]
 		message = current_user.send_message(@destinataire, "#{@message}", "#{@subject}")
-		redirect_to message_path(message.id)
+		notification = Notification.last
+		redirect_to conversation_path(notification.conversation_id)
 	end	
 
 	def show
-		@message = Notification.find(params[:id])	
+		@message = Receipt.find(params[:id])	
 	end
 
 end
