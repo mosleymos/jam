@@ -2,16 +2,27 @@
 
   <div class="small-6 small-centered column">
 
-  	<h1>Boite mail</h1>
+  	<h2>Conversations en cours</h2>
 
-  	<% all_mail = current_user.mailbox.inbox %>
-	<% all_mail.each do |participant| %>
-	    <tr>
-	        <td><%= participant.messages.last.sender.name %></td>
-	        <td><%= participant.messages.last.subject %></td>
-	   </tr>
-	<% end %>
-
+  	<%if current_user.mailbox.conversations.any? then%>
+  	
+  	
+	  	<%all_conv = current_user.mailbox.conversations%>
+		<%all_conv.each do |participant|%>
+		    <div class="ligne_conversation">
+		    <tr>
+		    	<a href="conversations/<%=@conversation_id%>">
+			        <td>
+			        	<%=participant.messages.last.sender.name%>
+			        </td>
+			        <td><%=participant.messages.last.body%>
+			        </td>
+		        </a>
+		   </tr></div>
+		<% end %>
+	<%else%>
+		<p>Pas de message pour l'instant</p>
+	<%end%>	
 	<br/>
 
   	<a href="/messages/new" class="button">Nouveau message</a>

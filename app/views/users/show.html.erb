@@ -11,6 +11,8 @@
 	<div class="small-3 small-offset-1 columns update">
 		<% if current_user==@user%>
 			<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
+		<%else%>
+			<a href="/messages/new" class="button">Nouveau message</a>
 		<% end %>
 	</div>
 

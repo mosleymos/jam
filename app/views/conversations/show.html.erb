@@ -2,13 +2,19 @@
 
   <div class="small-6 small-centered column">
 
- 	<% receipts = @conversation.receipts_for current_user %>
+ 	<%receipts = @conversation.receipts_for current_user%>
 
 	<%receipts.each do |receipt|%>
 		<%message = receipt.message%>
+		<div class="ligne_message">
 		<%= image_tag message.sender.avatar.url(:thumb) %> 
 		<%= message.body %>
+		</div>
 	<%end%>
+  
+	<div class="formulaire_reponse">
+  		<%= render 'reply_form' %>
+	</div>
   
   </div>
 
