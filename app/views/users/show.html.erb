@@ -25,7 +25,14 @@
 	</div>
 
 	<div class="small-4 columns">
-		<p>Annonce Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+		<p>
+		<%= if @user.annonce.present? then @user.annonce else 
+			if @user == current_user then
+			"Présentez-vous en quelques mots, les autres utilisateurs ont envie de mieux vous connaître !"
+			else "#{@user.name} n'a pas encore rempli son profil"
+			end	
+		end%>
+		</p>
 	</div>
 
 	<div class="small-4 columns bloc_info">

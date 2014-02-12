@@ -6,19 +6,17 @@
 
   	<%if current_user.mailbox.conversations.any? then%>
   	
-  	
-	  	<%all_conv = current_user.mailbox.conversations%>
-		<%all_conv.each do |participant|%>
+		<%@conversations.each do |participant|%>
 		    <div class="ligne_conversation">
-		    <tr>
-		    	<a href="conversations/<%=@conversation_id%>">
-			        <td>
-			        	<%=participant.messages.last.sender.name%>
-			        </td>
-			        <td><%=participant.messages.last.body%>
-			        </td>
+		    <ul>
+		    	<a href="conversations/<%=participant.id%>">
+			        <li>
+			        	<%=image_tag participant.messages.last.sender.avatar.url(:thumb) %>
+			        	<%=participant.messages.last.sender.name%>			        
+			        	<%=participant.messages.last.body%>
+			        </li>
 		        </a>
-		   </tr></div>
+		    </ul></div>
 		<% end %>
 	<%else%>
 		<p>Pas de message pour l'instant</p>

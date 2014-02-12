@@ -2,20 +2,15 @@
 
 	<div class="small-6 small-centered column">
 
-	<h1>Liste des utilisateurs</h1>
-
-		<ul>
-			
+		<h2>Liste des utilisateurs</h2>
+		<ul>			
 			<% @user.each do |u| %>
-
-			<li class="list_users"><a href="/users/<%=u.id%>"><%= image_tag u.avatar.url(:thumb) %> <%=u.name%></a>
-				<%=u.age%> <%=u.sexe%> <%=u.ville%>
-			</li>
-
+				<li class="list_users"><a href="/users/<%=u.id%>"><%= image_tag u.avatar.url(:thumb) %> <%=u.name%></a>
+					<%=u.age%> ans <%=u.ville%>
+				</li>
 			<%end%>
-
 		</ul>
-
-	</div>
 	
+	</div>
+
 </div>

@@ -40,7 +40,7 @@ class UsersController < ApplicationController
 
 	def user_params
 	  params.require(:user).permit(:avatar, :age, :sexe, :orientation, :ville, :cheveux, :yeux, 
-	  	:taille, :bodytype, :profession, :religion, :astral)
+	  	:taille, :bodytype, :profession, :religion, :astral, :annonce)
 	end
 		
 end

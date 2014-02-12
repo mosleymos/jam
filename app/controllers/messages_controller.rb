@@ -5,11 +5,7 @@ class MessagesController < ApplicationController
 	end
 
 	def create
-		# if conversation.empty?
-			destinataire = User.find(params[:id])
-		# else
-		# 	@destinataire = conversation.participants
-		# end
+		destinataire = User.find(params[:id])
 		@subject = params[:subject]
 		@message = params[:message]	
 		current_user.send_message(destinataire, "#{@message}", "#{@subject}")
