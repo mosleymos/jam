@@ -11,13 +11,18 @@
 		    <ul>
 		    	<%= link_to conversation_path(conv.id) do%>
 			        <li>
-			        	<%=image_tag conv.messages.last.sender.avatar.url(:thumb) %>
-			        	<%=conv.messages.last.sender.name%>			        
+			        	<%correspondant=conv.participants.find do |u|%>
+  								<%u.id != current_user.id%>
+						<% end %>
+
+			        	<%=image_tag correspondant.avatar.url(:thumb) %>
+			        	<%=correspondant.name%>			        
 			        	<%=conv.messages.last.body%>
 			        </li>
 			    <% end %>
 		    </ul></div>
 		<% end %>
+		
 	<%else%>
 		<p>Pas de message pour l'instant</p>
 	<%end%>	
