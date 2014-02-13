@@ -1,8 +1,11 @@
 Jam::Application.routes.draw do
+  get "microposts/create"
+  get "microposts/destroy"
   devise_for :users
   resources :users
   resources :messages
   resources :conversations
+  resources :microposts, only: [:create, :destroy]
 
   root 'pages_statiques#home'
   match 'home', to: 'pages_statiques#home', via: 'get'
@@ -14,6 +17,7 @@ Jam::Application.routes.draw do
 
   match 'detruire_compte', to: 'users#destroy', via: 'delete'
   match 'reply', to: 'conversations#reply', via: 'post'
+  match 'data', to: 'users#data', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

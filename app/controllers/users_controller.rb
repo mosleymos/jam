@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@micropost = current_user.microposts.build
 	end
 
 	def edit
@@ -33,6 +34,10 @@ class UsersController < ApplicationController
 		redirect_to new_user_session_path
 	end
 
+	def data
+		@user = current_user
+	end	
+
 	private
 
 	# Use strong_parameters for attribute whitelisting
@@ -42,5 +47,9 @@ class UsersController < ApplicationController
 	  params.require(:user).permit(:avatar, :age, :sexe, :orientation, :ville, :cheveux, :yeux, 
 	  	:taille, :bodytype, :profession, :religion, :astral, :annonce)
 	end
-		
+
+	 # Before filters
+
+	before_filter :authenticate_user!
+
 end

@@ -7,6 +7,8 @@ gem "paperclip", "~> 3.0"
 gem 'devise'
 gem 'mailboxer'
 
+gem 'will_paginate'
+
 gem 'pry-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

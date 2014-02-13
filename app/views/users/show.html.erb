@@ -5,7 +5,15 @@
 	</div>
 
 	<div class="small-4 columns panel bloc_statut">
-		<p>Humeur du jour</p>
+
+		<% if @user.microposts.any? %>
+            <%= @user.microposts.last.content %>
+            <p>publié il y a <%= time_ago_in_words(@user.microposts.last.created_at) %>.<p>
+            <%= link_to 'nouveau statut', 'shared/micropost_form' %>
+        <% else %>
+			<%= render 'shared/micropost_form' %>
+		<%end%>
+
 	</div>
 
 	<div class="small-3 small-offset-1 columns update">
@@ -61,13 +69,13 @@
 
 			<div class="small-6 columns">
 				<ul> 
-					<li><%= if @user.age.present? then @user.age else "---" end%></li>
+					<li><%= if @user.age.present? then "#{@user.age} ans" else "---" end%></li>
 					<li><%= if @user.sexe.present? then @user.sexe else "---" end%></li>
 					<li><%= if @user.orientation.present? then @user.orientation else "---" end%></li>
 					<li><%= if @user.ville.present? then @user.ville else "---" end%></li>
 					<li><%= if @user.cheveux.present? then @user.cheveux else "---" end%></li>
 					<li><%= if @user.yeux.present? then @user.yeux else "---" end%></li>
-					<li><%= if @user.taille.present? then @user.taille else "---" end%></li>
+					<li><%= if @user.taille.present? then "#{@user.taille} cm" else "---" end%></li>
 					<li><%= if @user.bodytype.present? then @user.bodytype else "---" end%></li>
 					<li><%= if @user.profession.present? then @user.profession else "---" end%></li>
 					<li><%= if @user.religion.present? then @user.religion else "---" end%></li>
