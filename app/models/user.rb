@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
 
 	def feed
 	    # This is preliminary. See "Following users" for the full implementation. Michael hartl forever.
-		Micropost.where("user_id = ?", id)
+		# Micropost.where("user_id = ?", id)
+		Micropost.all
 	end
 
 	# devise

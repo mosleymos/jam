@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
 
 	def new
-		@users = User.all
+		@user = User.find(params[:user_id])
 	end
 
 	def create
-		destinataire = User.find(params[:id])
+		destinataire = User.find(params[:user_id])
 		@subject = params[:subject]
 		@message = params[:message]	
 		current_user.send_message(destinataire, "#{@message}", "#{@subject}")

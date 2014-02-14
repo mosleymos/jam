@@ -2,10 +2,10 @@
 
   <div class="small-6 small-centered column">
 
-    <h3>Choisir un destinataire</h3>
+    <p>Message destiné à <%=@user.name%></p>
 
   	<%= form_tag(messages_path) do  %>
-      <%= render 'receiver_choice' %>
+      <%= hidden_field_tag :user_id, @user.id %> 
       <%= text_field_tag :subject, nil, :placeholder => "Sujet" %>
       <%= text_area_tag :message, nil, :placeholder => "Message" %>
       <%= submit_tag "Envoyer", :class => "submit" %>

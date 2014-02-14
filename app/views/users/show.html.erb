@@ -6,21 +6,26 @@
 
 	<div class="small-4 columns panel bloc_statut">
 
-		<% if @user.microposts.any? %>
-            <%= @user.microposts.last.content %>
-            <p>publié il y a <%= time_ago_in_words(@user.microposts.last.created_at) %>.<p>
-            <%= link_to 'nouveau statut', 'shared/micropost_form' %>
-        <% else %>
-			<%= render 'shared/micropost_form' %>
+		<% if @user==current_user %>
+			<% if @user.microposts.any? %>
+	            <%= @user.microposts.first.content %>
+	            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at) %>.<p>
+	            <%= render 'shared/micropost_form' %>
+	        <% else %>
+				<%= render 'shared/micropost_form' %>
+			<%end%>
+		<% else %>
+			<% if @user.microposts.any? %>
+				<%= @user.microposts.first.content %>
+			<%end%>
 		<%end%>
-
 	</div>
 
 	<div class="small-3 small-offset-1 columns update">
-		<% if current_user==@user%>
+		<% if @user==current_user %>
 			<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
 		<%else%>
-			<a href="/messages/new" class="button">Nouveau message</a>
+			<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %>
 		<% end %>
 	</div>
 

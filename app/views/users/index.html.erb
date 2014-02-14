@@ -5,8 +5,8 @@
 		<h2>Liste des utilisateurs</h2>
 		<ul>			
 			<% @user.each do |u| %>
-				<li class="list_users"><a href="/users/<%=u.id%>"><%= image_tag u.avatar.url(:thumb) %> <%=u.name%></a>
-					<%=u.age%> ans <%=u.ville%>
+				<li class="list_users"><a href="/users/<%=u.id%>"><%= image_tag u.avatar.url(:thumb) %> <%=u.name%>
+					<%=u.age%> ans <%=u.ville%></a>
 				</li>
 			<%end%>
 		</ul>
