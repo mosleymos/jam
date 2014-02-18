@@ -25,8 +25,13 @@
 		<% if @user==current_user %>
 			<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
 		<%else%>
-			<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %>
-			<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%>
+			<% current_user.targetships.each do |t| %>
+				<% if @user.id!=t.target_id %>
+					<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%><%break%>
+				<%else%><%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %>
+									<%break%>
+				<%end%>	
+			<%end%>
 		<% end %>
 	</div>
 

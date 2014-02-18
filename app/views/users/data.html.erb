@@ -2,6 +2,9 @@
 	<div class="small-6 small-centered columns samplecontainer">
 		<h1>DATAS</h1>
 		<h2>de <%=current_user.name%></h2>
-		<p>todo</p>
+		<p>Liste des contacts</p>
+		<% for user in @user.targets %>
+		  <li><%= user.name %></li>
+		<% end %>  
 	</div>
 </div>
