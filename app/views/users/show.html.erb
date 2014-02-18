@@ -1,292 +1,306 @@
 <div class="row">
+  <div class="small-11 column">
 
-	<div class="small-4 columns bloc_pseudo">
-		<h1><%= @user.name %></h1>
-	</div>
+	<div class="row">
 
-	<div class="small-4 columns panel bloc_statut">
-
-		<% if @user==current_user %>
-			<% if @user.microposts.any? %>
-				<%= render 'shared/micropost_form' %>
-	            <%= @user.microposts.first.content %>
-	            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at)%></p>	            
-	        <% else %>
-				<%= render 'shared/micropost_form' %>
-			<%end%>
-		<% else %>
-			<% if @user.microposts.any? %>
-				<%= @user.microposts.first.content %>
-			<%end%>
-		<%end%>
-	</div>
-
-	<div class="small-3 small-offset-1 columns update">
-		<% if @user==current_user %>
-			<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
-		<%else%>
-			<% current_user.targetships.each do |t| %>
-				<% if @user.id!=t.target_id %>
-					<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%><%break%>
-				<%else%><%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %>
-									<%break%>
-				<%end%>	
-			<%end%>
-		<% end %>
-	</div>
-
-</div>
-
-<div class="row">
-
-	<div class="small-4 columns">
-		<%= image_tag @user.avatar.url(:medium) %>	
-	</div>
-
-	<div class="small-4 columns">
-		<p>
-		<%= if @user.annonce.present? then @user.annonce else 
-			if @user == current_user then
-			"Présentez-vous en quelques mots, les autres utilisateurs ont envie de mieux vous connaître !"
-			else "#{@user.name} n'a pas encore rempli son profil"
-			end	
-		end%>
-		</p>
-	</div>
-
-	<div class="small-4 columns bloc_info">
-
-		<div class="row">
-
-			<div class="small-6 columns">
-
-				<ul>
-
-					<li>Age</li>
-					<li>Sexe</li>
-					<li>Orientation</li>
-					<li>Ville</li>
-					<li>Cheveux</li>
-					<li>Yeux</li>
-					<li>Taille</li>
-					<li>Type physique</li>
-					<li>Profession</li>
-					<li>Religion</li>
-					<li>Signe astral</li>
-
-				</ul>
-
-			</div>
-
-			<div class="small-6 columns">
-				<ul> 
-					<li><%= if @user.age.present? then "#{@user.age} ans" else "---" end%></li>
-					<li><%= if @user.sexe.present? then @user.sexe else "---" end%></li>
-					<li><%= if @user.orientation.present? then @user.orientation else "---" end%></li>
-					<li><%= if @user.ville.present? then @user.ville else "---" end%></li>
-					<li><%= if @user.cheveux.present? then @user.cheveux else "---" end%></li>
-					<li><%= if @user.yeux.present? then @user.yeux else "---" end%></li>
-					<li><%= if @user.taille.present? then "#{@user.taille} cm" else "---" end%></li>
-					<li><%= if @user.bodytype.present? then @user.bodytype else "---" end%></li>
-					<li><%= if @user.profession.present? then @user.profession else "---" end%></li>
-					<li><%= if @user.religion.present? then @user.religion else "---" end%></li>
-					<li><%= if @user.astral.present? then @user.astral else "---" end%></li>
-				</ul>
-			</div>
-
+		<div class="small-4 columns bloc_pseudo">
+			<h1><%= @user.name %></h1>
 		</div>
-	</div>
-</div>
 
-<div class="row">
+		<div class="small-4 columns panel bloc_statut">
 
-	<div class="small-8 columns">
+			<% if @user==current_user %>
+				<% if @user.microposts.any? %>
+					<%= render 'shared/micropost_form' %>
+		            <%= @user.microposts.first.content %>
+		            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at)%></p>	            
+		        <% else %>
+					<%= render 'shared/micropost_form' %>
+				<%end%>
+			<% else %>
+				<% if @user.microposts.any? %>
+					<%= @user.microposts.first.content %>
+				<%end%>
+			<%end%>
+		</div>
 
-		<div class="badges">
-			<h3>Badges</h3>
-			<div class="row">
-				<div class="small-2 small-offset-1 columns">
-					<i class="fi-crown"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-shield"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-megaphone"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-trophy"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-target-two"></i>
-				</div>
-				<div class="small-1 columns"></div>
-			</div>
-
-			<div class="row">
-				<div class="small-2 small-offset-1 columns">
-					<i class="fi-skull"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-sheriff-badge"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-paw"></i>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-music"></i>
-				</div>
-				<div class="small-3 columns"></div>
-			</div>
+		<div class="small-3 small-offset-1 columns update">
 			
-		</div>
+			<% if @user==current_user %>
+				<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
+			<%else%>
+				
+				<% if current_user.targetships.empty? %>
+				<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%>
+				<%end%>
 
-		<div class="tests">			
-			<h3>Tests</h3>
-			<div class="row">
-				<div class="small-2 small-offset-1 columns">
-					<i class="fi-lock"></i>
-					<p>Séduction</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-lock"></i>
-					<p>Sexo</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-lock"></i>
-					<p>Couple</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-lock"></i>
-					<p>Ethique</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-lock"></i>
-					<p>Lyfestyle</p>
-				</div>
-				<div class="small-1 columns"></div>
-			</div>
-		</div>
+				<% current_user.targetships.each do |t| %>
+					<% if @user.id!=t.target_id %>
+						<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%><%break%>
+					<%else%>
+					<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %><%break%>
+					<%end%>	
+				<%end%>
 
-		<div class="notes">
-			<h3>Notes</h3>
-			<div class="row">
-				<div class="small-3 columns">
-					<p>Fidélité du profil</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-3 small-offset-1 columns">
-					<p>Humour</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-1 columns"></div>
-			</div>
-
-			<div class="row">
-				<div class="small-3 columns">
-					<p>Conversation</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-3 small-offset-1 columns">
-					<p>Initiative</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-1 columns"></div>
-			</div>
-
-			<div class="row">
-				<div class="small-3 columns">
-					<p>Partage</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-3 small-offset-1 columns">
-					<p>Surprise</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-1 columns"></div>
-			</div>
-
-			<div class="row">
-				<div class="small-3 columns">
-					<p>Energie</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-3 small-offset-1 columns">
-					<p>Ecoute</p>
-				</div>
-				<div class="small-2 columns">
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-					<i class="fi-star"></i>
-				</div>
-				<div class="small-1 columns"></div>
-			</div>
-
+			<%end%>
 
 		</div>
 
 	</div>
 
-	<div class="small-4 columns">
+	<div class="row">
 
-		<div>
-			<p>Musique</p>
-			<p>Cinéma</p>
-			<p>Séries TV</p>
-			<p>Littérature</p>
+		<div class="small-4 columns">
+			<%= image_tag @user.avatar.url(:medium) %>	
 		</div>
 
-		<div class="contenu">
-			<h3>Contenu</h3>
-			<iframe width="300" height="225" src="//www.youtube.com/embed/rlfHcCLn4pk" frameborder="0" allowfullscreen></iframe>
-		
-			<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113781204&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+		<div class="small-4 columns">
+			<p>
+			<%= if @user.annonce.present? then @user.annonce else 
+				if @user == current_user then
+				"Présentez-vous en quelques mots, les autres utilisateurs ont envie de mieux vous connaître !"
+				else "#{@user.name} n'a pas encore rempli son profil"
+				end	
+			end%>
+			</p>
+		</div>
+
+		<div class="small-4 columns bloc_info">
+
+			<div class="row">
+
+				<div class="small-6 columns">
+
+					<ul>
+
+						<li>Age</li>
+						<li>Sexe</li>
+						<li>Orientation</li>
+						<li>Ville</li>
+						<li>Cheveux</li>
+						<li>Yeux</li>
+						<li>Taille</li>
+						<li>Type physique</li>
+						<li>Profession</li>
+						<li>Religion</li>
+						<li>Signe astral</li>
+
+					</ul>
+
+				</div>
+
+				<div class="small-6 columns">
+					<ul> 
+						<li><%= if @user.age.present? then "#{@user.age} ans" else "---" end%></li>
+						<li><%= if @user.sexe.present? then @user.sexe else "---" end%></li>
+						<li><%= if @user.orientation.present? then @user.orientation else "---" end%></li>
+						<li><%= if @user.ville.present? then @user.ville else "---" end%></li>
+						<li><%= if @user.cheveux.present? then @user.cheveux else "---" end%></li>
+						<li><%= if @user.yeux.present? then @user.yeux else "---" end%></li>
+						<li><%= if @user.taille.present? then "#{@user.taille} cm" else "---" end%></li>
+						<li><%= if @user.bodytype.present? then @user.bodytype else "---" end%></li>
+						<li><%= if @user.profession.present? then @user.profession else "---" end%></li>
+						<li><%= if @user.religion.present? then @user.religion else "---" end%></li>
+						<li><%= if @user.astral.present? then @user.astral else "---" end%></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="small-8 columns">
+
+			<div class="badges">
+				<h3>Badges</h3>
+				<div class="row">
+					<div class="small-2 small-offset-1 columns">
+						<i class="fi-crown"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-shield"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-megaphone"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-trophy"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-target-two"></i>
+					</div>
+					<div class="small-1 columns"></div>
+				</div>
+
+				<div class="row">
+					<div class="small-2 small-offset-1 columns">
+						<i class="fi-skull"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-sheriff-badge"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-paw"></i>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-music"></i>
+					</div>
+					<div class="small-3 columns"></div>
+				</div>
+				
+			</div>
+
+			<div class="tests">			
+				<h3>Tests</h3>
+				<div class="row">
+					<div class="small-2 small-offset-1 columns">
+						<i class="fi-lock"></i>
+						<p>Séduction</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-lock"></i>
+						<p>Sexo</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-lock"></i>
+						<p>Couple</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-lock"></i>
+						<p>Ethique</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-lock"></i>
+						<p>Lyfestyle</p>
+					</div>
+					<div class="small-1 columns"></div>
+				</div>
+			</div>
+
+			<div class="notes">
+				<h3>Notes</h3>
+				<div class="row">
+					<div class="small-3 columns">
+						<p>Fidélité du profil</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-3 small-offset-1 columns">
+						<p>Humour</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-1 columns"></div>
+				</div>
+
+				<div class="row">
+					<div class="small-3 columns">
+						<p>Conversation</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-3 small-offset-1 columns">
+						<p>Initiative</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-1 columns"></div>
+				</div>
+
+				<div class="row">
+					<div class="small-3 columns">
+						<p>Partage</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-3 small-offset-1 columns">
+						<p>Surprise</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-1 columns"></div>
+				</div>
+
+				<div class="row">
+					<div class="small-3 columns">
+						<p>Energie</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-3 small-offset-1 columns">
+						<p>Ecoute</p>
+					</div>
+					<div class="small-2 columns">
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+						<i class="fi-star"></i>
+					</div>
+					<div class="small-1 columns"></div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+		<div class="small-4 columns">
+
+			<div>
+				<p>Musique</p>
+				<p>Cinéma</p>
+				<p>Séries TV</p>
+				<p>Littérature</p>
+			</div>
+
+			<div class="contenu">
+				<h3>Contenu</h3>
+				<iframe width="300" height="225" src="//www.youtube.com/embed/rlfHcCLn4pk" frameborder="0" allowfullscreen></iframe>
+			
+				<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/113781204&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe>
+			</div>
+
 		</div>
 
 	</div>
-
+  </div>
+  <div class="small-1 column"></div>
 </div>

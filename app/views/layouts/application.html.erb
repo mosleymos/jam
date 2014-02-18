@@ -13,11 +13,22 @@
   </head>
 
   <body>
-  	<%= if user_signed_in? then render 'layouts/header' end%>
-  	<p class="notice"><%= notice %></p>
+    <%= if user_signed_in? then render 'layouts/header' end%>
+    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
-    <%= if user_signed_in? then render 'layouts/footer' end%>
+
+    <div class="row">
+      <div class="small-2 column">
+        <%= if user_signed_in? then render 'layouts/isu' end%>
+      </div>
+      <div class="small-10 column">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div class="row">
+      <%= if user_signed_in? then render 'layouts/footer' end%>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
