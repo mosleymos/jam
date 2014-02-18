@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 	    # This is preliminary. See "Following users" for the full implementation. Michael hartl forever.
 		# Micropost.where("user_id = ?", id)
 		
-		Micropost.all
+		Micropost.where("user_id != ?", id)
 	end
 
 	# devise
