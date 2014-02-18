@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213171526) do
+ActiveRecord::Schema.define(version: 20140218000155) do
 
   create_table "conversations", force: true do |t|
     t.string   "subject",    default: ""
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(version: 20140213171526) do
   end
 
   add_index "receipts", ["notification_id"], name: "index_receipts_on_notification_id"
+
+  create_table "targetships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "target_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"

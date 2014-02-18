@@ -8,9 +8,9 @@
 
 		<% if @user==current_user %>
 			<% if @user.microposts.any? %>
+				<%= render 'shared/micropost_form' %>
 	            <%= @user.microposts.first.content %>
-	            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at) %>.<p>
-	            <%= render 'shared/micropost_form' %>
+	            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at) %>.<p>	            
 	        <% else %>
 				<%= render 'shared/micropost_form' %>
 			<%end%>
@@ -26,6 +26,7 @@
 			<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
 		<%else%>
 			<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %>
+			<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%>
 		<% end %>
 	</div>
 

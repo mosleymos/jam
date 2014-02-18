@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
 	# validates :sexe, presence: true, inclusion: { in: %w(masculin feminin autre)}
 	validates :ville, presence: true
 
+	# gestion de la prise de contact, mise en relation
+	has_many :targetships
+	has_many :targets, :through => :targetships
+
+
+	# flux de statuts sur la home page 
+
 	def feed
 	    # This is preliminary. See "Following users" for the full implementation. Michael hartl forever.
 		# Micropost.where("user_id = ?", id)
