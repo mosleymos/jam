@@ -1,9 +1,18 @@
 <li id="<%= feed_item.id %>">
-  <%= link_to feed_item.user do%>
-  	<%=image_tag feed_item.user.avatar.url(:thumb) %>
-  <%end%>
-  <%= link_to feed_item.user.name, feed_item.user %>
-  <%= feed_item.user.microposts.first.content %>
-  <br/>publié il y a <%= time_ago_in_words(feed_item.created_at) %>
+	<div class="row feed_item">
+		<div class="small-4 column">
+		  <%= link_to feed_item.user do%>
+		  	<div class="photo_feed_home"><%=image_tag feed_item.user.avatar.url(:thumb) %></div>
+		  	<div class="pseudo_feed_home"><%= feed_item.user.name %></div>
+		  <%end%>
+		</div>
+
+		<div class="small-8 column">
+			<div class="statut_home"><%= feed_item.user.microposts.first.content %></div>
+  			publié il y a <%= time_ago_in_words(feed_item.created_at) %>
+		</div>
+
+		<hr>
+	</div>	  
 </li>
 

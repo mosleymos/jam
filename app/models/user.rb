@@ -20,7 +20,16 @@ class User < ActiveRecord::Base
 	    # This is preliminary. See "Following users" for the full implementation. Michael hartl forever.
 		# Micropost.where("user_id = ?", id)
 		
-		Micropost.where("user_id != ?", id)
+		
+		Micropost.all
+		# Micropost.where("user_id != ?", id)
+		# Micropost.uniq_by {|o| o.user_id}
+		# Micropost.select(:user_id).distinct
+		# Micropost.find_each do |statut|
+		# 	statut.user_id.unique =true
+		# end
+
+
 	end
 
 	# devise
