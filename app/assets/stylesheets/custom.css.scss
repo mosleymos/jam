@@ -21,7 +21,7 @@
 	background:#F2F2F2;
 	border: 1px #D8D8D8 solid;
 	/*position:fixed;*/
-	margin-top:50px;
+	margin-top:70px;
 }
 
 /*style temporaires pour la période de dev */
@@ -85,6 +85,14 @@ h3 {
 	margin-top: 20px;
 }
 
+.photo_profil_principale {
+	text-align: center;
+}
+
+.annonce {
+	height: 300px
+}
+
 .bloc_pseudo {
 	margin-top: 40px;
 	margin-bottom: 40px;
@@ -100,8 +108,21 @@ h3 {
 }
 
 .bloc_info {
-	border: 2px solid black;
+	border: 1px solid black;
 	padding: 5px;
+	margin-top: 10px
+}
+
+.gouts_culturels {
+}
+
+.bloc_gc {
+	height: 150px
+}
+
+.titre_gc {
+	font-size: 1.2em;
+	font-style: italic;
 }
 
 .badges .row {
@@ -111,9 +132,19 @@ h3 {
 	font-size: 3.5em;
 }
 
+.badge_item {
+	text-align: center;
+}
+
+.tests {
+	margin-bottom: 30px;
+}
+
 .tests .row {
-	margin-top: 30px;
+	margin-top: 20px;
 } 
+
+
 
 .tests i {
 	font-size: 5em;
