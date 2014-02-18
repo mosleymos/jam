@@ -1,6 +1,12 @@
 <%= form_for(@micropost) do |f| %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  	<div class="row collapse">
+        <div class="small-10 columns">
+		    <%= f.text_field :content, placeholder: "Humeur du jour" %>
+		</div>
+		<div class="small-2 columns">
+		    <%= f.submit "ok", class: "button postfix" %>
+		</div>
+  	</div>
   </div>
-  <%= f.submit "Post" %>
 <% end %>

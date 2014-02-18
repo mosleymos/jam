@@ -10,7 +10,7 @@
 			<% if @user.microposts.any? %>
 				<%= render 'shared/micropost_form' %>
 	            <%= @user.microposts.first.content %>
-	            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at) %>.<p>	            
+	            <p>publié il y a <%= time_ago_in_words(@user.microposts.first.created_at)%></p>	            
 	        <% else %>
 				<%= render 'shared/micropost_form' %>
 			<%end%>

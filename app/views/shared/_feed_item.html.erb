@@ -3,6 +3,7 @@
   <%=image_tag feed_item.user.avatar.url(:thumb) %>
   <%end%>
   <%= link_to feed_item.user.name, feed_item.user %>
-  <%= feed_item.content %>
+  <%= feed_item.user.microposts.first.content %>
   <br/>publié il y a <%= time_ago_in_words(feed_item.created_at) %>
 </li>
+
