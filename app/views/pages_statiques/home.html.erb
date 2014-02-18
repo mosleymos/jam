@@ -1,8 +1,56 @@
-<div class="row home">
-	<div class="small-6 small-centered columns">
-		<h1>HOME de <%=current_user.name%></h1>
+
+
+<div class="row home_bandeau">
+
+	<div class="small-2 columns avatar_home">
+		<%= image_tag @user.avatar.url(:thumb) %>
+	</div>	
+
+	<div class="small-4 columns form_statut_home">
+		<%= render 'shared/micropost_form' %>
+	</div>
+
+	<div class="small-4 small-offset-2 columns">
+		<h1 class="">HOME</h1>
+		<h2>de <%=current_user.name%></h2>
+	</div>
+
+</div>
+
+<div class="row home_body">
+	<div class="small-8 columns">
 		<h3>Actualités des contacts</h3>
 		<%= render 'shared/feed' %>
+	</div>
+
+	<div class="small-4 columns">
+		<div class="communaute">
+			<h3>Blog du site</h3>
+			<dl class="tabs bloc_blog" data-tab>
+				<dd class="active onglet"><a href="#panel2-1">Derniers posts</a></dd>
+				<dd class="onglet"><a href="#panel2-2">Best of</a></dd>
+			</dl>
+			<div class="tabs-content bloc_blog">
+				<div class="content active bloc_post" id="panel2-1">
+					<h4>Post1</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi</p>
+					<h4>Post2</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi</p>
+				</div>
+
+				<div class="content bloc_post" id="panel2-2">
+					<h4>Post3</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi</p>
+					<h4>Post4</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidi</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="small-6 columns icone_reseaux"><i class="fi-social-facebook"></i></div>
+				<div class="small-6 columns icone_reseaux"><i class="fi-social-twitter"></i></div>
+			</div>
+		</div>
 	</div>
 </div>
 

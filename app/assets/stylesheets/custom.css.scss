@@ -2,6 +2,8 @@
 
 /*variables scss*/
 
+$lightGray: #F2F2F2;
+$GrayBord: #D8D8D8;
 
 /*customization des éléments foundation*/
 
@@ -18,8 +20,8 @@
 .isu {
 	width:150px;
 	height:1000px;
-	background:#F2F2F2;
-	border: 1px #D8D8D8 solid;
+	background:$lightGray;
+	border: 1px $GrayBord solid;
 	/*position:fixed;*/
 	margin-top:50px;
 }
@@ -149,16 +151,30 @@ h3 {
 
 /*home page*/
 
-.home h1 {
+.row .home_bandeau {
+	margin-top: 40px;
+}
+
+.home_bandeau h1 {
   color: #C91010;
   font-weight: bold;
-  margin-top: 30px;
   margin-bottom: 20px
 }
 
-.home h3 {
-	margin-bottom: 50px
+.avatar_home {
+	text-align: center;
 }
+
+.form_statut_home {
+	margin-top: 20px;
+}
+
+.home_body h3 {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+
 
 /*flux*/
 
@@ -176,4 +192,37 @@ h3 {
 
 .photo_feed_home {
 	text-align: center;
+}
+
+/*blog*/
+
+.communaute {
+	margin-left: 40px;
+}
+
+.communaute h3 {
+	text-align: center;
+	margin-right: 20px
+}
+
+.bloc_blog {
+	border: 1px $GrayBord solid;
+	width: 282px;
+
+}
+.bloc_post {
+	margin-left: 10px
+}
+
+.bloc_post h4 {
+	font-style: italic;
+}
+
+.onglet {
+	/*border: 1px $GrayBord solid;*/
+}
+
+.icone_reseaux {
+	font-size: 4em;
+	text-align:center;
 }
