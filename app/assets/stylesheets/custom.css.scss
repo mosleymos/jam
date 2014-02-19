@@ -226,3 +226,18 @@ h3 {
 	font-size: 4em;
 	text-align:center;
 }
+
+/*page echange*/
+
+.ligne_message {
+	margin-top: 20px;
+}
+
+.bloc_message {
+	background: $lightGray;
+	border: 1px $GrayBord solid;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	width: 300px;
+}

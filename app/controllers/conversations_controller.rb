@@ -16,6 +16,8 @@ class ConversationsController < ApplicationController
 
 	def show
 		@conversation = Conversation.find(params[:id])
+		# @receipts = @conversation.receipts_for current_user
+		@target = @conversation.recipients.find { |u| u!=current_user}
 	end
 
 	def reply
