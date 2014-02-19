@@ -1,5 +1,11 @@
 <%= form_tag('/reply', method: 'post') do %>
-      <%= text_area_tag :message, nil, :placeholder => "Répondre" %>
-      <%= hidden_field_tag 'id', @conversation.id %>
-      <%= submit_tag "Envoyer", :class => "submit" %>
+	<div class="row collapse">
+		<div class="small-10 columns">
+      		<%= text_area_tag :message, nil, :placeholder => "Répondre" %>
+     		<%= hidden_field_tag 'id', @conversation.id %>
+     	</div>
+     	<div class="small-2 columns"> 		
+     	   <%= submit_tag "Envoyer", :class => "submit button postfix" %>
+     	</div>
+    </div>  
 <% end %>
