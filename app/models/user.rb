@@ -13,13 +13,12 @@ class User < ActiveRecord::Base
 	has_many :targetships
 	has_many :targets, :through => :targetships
 
-
 	# flux de statuts sur la home page 
 
 	def feed
 
 		feed=[]
-		User.all.each do |u|
+		User.find_each do |u|
 			if u.microposts.any?
 				feed << u.microposts.first
 			end		
@@ -41,6 +40,7 @@ class User < ActiveRecord::Base
 	#particularités de mailboxer 
 
 	acts_as_messageable
+	
 	#Returning any kind of identification you want for the model
 	# def name
 	# end
