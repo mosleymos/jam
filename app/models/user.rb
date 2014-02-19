@@ -17,18 +17,14 @@ class User < ActiveRecord::Base
 	# flux de statuts sur la home page 
 
 	def feed
-	    # This is preliminary. See "Following users" for the full implementation. Michael hartl forever.
-		# Micropost.where("user_id = ?", id)
-		
-		
-		Micropost.all
-		# Micropost.where("user_id != ?", id)
-		# Micropost.uniq_by {|o| o.user_id}
-		# Micropost.select(:user_id).distinct
-		# Micropost.find_each do |statut|
-		# 	statut.user_id.unique =true
-		# end
 
+		feed=[]
+		User.all.each do |u|
+			if u.microposts.any?
+				feed << u.microposts.first
+			end		
+		end
+		return feed.sort! { |a,b| b.created_at <=> a.created_at }
 
 	end
 

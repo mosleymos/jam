@@ -3,8 +3,10 @@
 		<h1>DATAS</h1>
 		<h2>de <%=current_user.name%></h2>
 		<p>Liste des contacts</p>
-		<% for user in @user.targets %>
-		  <li><%= user.name %></li>
-		<% end %>  
+		<ul>
+			<% for user in @user.targets %>
+			  <li><%= user.name %></li>
+			<% end %> 
+		</ul> 
 	</div>
 </div>
