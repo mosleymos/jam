@@ -27,30 +27,23 @@
 
   	<%@conversation.messages.each do |message|%>
 
-	  		<div class="row">
+  		<div class="row">
 
-		  		<div class="small-5 column ligne_message">
-			  		
-				  	<%if message.sender_id==@target.id%>
-				  		<div class="bloc_message">		  	
-							<%= message.body %>
-						</div>				
-					<%end%>	
-					
-				</div>
+	  		<div class="small-5 column ligne_message">			  		
+			  	<%if message.sender_id==@target.id%>
+			  		<div class="bloc_message"><%= message.body %></div>				
+				<%end%>						
+			</div>
 
-		  	    <div class="small-5 small-offset-1 column ligne_message">
-			  		
-					<%if message.sender_id==current_user.id%>
-						<div class="bloc_message">		  	
-							<%= message.body %>
-						</div>			
-					<%end%>	
-					
-				</div>
+	  	    <div class="small-5 small-offset-1 column ligne_message">			  		
+				<%if message.sender_id==current_user.id%>
+					<div class="bloc_message"><%= message.body %></div>			
+				<%end%>						
+			</div>
 
-	  	    	<div class="small-1 column"></div>
-	  	    </div>
+  	    	<div class="small-1 column"></div>
+  	    </div>
+  	    
   	<%end%>	
   </div>
 
