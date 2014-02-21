@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+	before_filter :authenticate_user!
+
 	def new
 		@user = User.new
 	end
@@ -46,10 +48,6 @@ class UsersController < ApplicationController
 	def user_params
 	  params.require(:user).permit(:avatar, :age, :sexe, :orientation, :ville, :cheveux, :yeux, 
 	  	:taille, :bodytype, :profession, :religion, :astral, :annonce)
-	end
-
-	 # Before filters
-
-	before_filter :authenticate_user!
+	end	
 
 end

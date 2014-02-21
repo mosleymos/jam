@@ -1,0 +1,15 @@
+<%if current_user.requested_targets.any? %>
+
+	<% current_user.requested_targets.each do |t|%>
+		<div class="requete_contact">
+			<%= image_tag t.avatar.url(:thumb) %>
+			<%= t.name %>
+			<%= t.age %>
+			<%= t.ville %>
+			<%= link_to "Accepter", accepter_contact_path(target_id: t.id), class: "button"%>
+			<%= link_to "Refuser", refuser_contact_path(target_id: t.id), class: "button"%>
+		</div>		
+	<%end%>
+
+<%else%><p>Pas de demande de contact</p>
+<%end%>

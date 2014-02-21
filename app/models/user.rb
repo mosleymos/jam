@@ -11,7 +11,12 @@ class User < ActiveRecord::Base
 
 	# gestion de la prise de contact, mise en relation
 	has_many :targetships
-	has_many :targets, :through => :targetships
+	has_many :targets, :through => :targetships, 
+				:conditions => "status = 'accepted'"
+	has_many :requested_targets, :through => :targetships, :source => :target,
+				:conditions => "status = 'requested'"
+	has_many :pending_targets, :through => :targetships, :source => :target,
+				:conditions => "status = 'pending'"
 
 	# flux de statuts sur la home page 
 

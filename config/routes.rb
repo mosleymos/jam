@@ -1,14 +1,14 @@
 Jam::Application.routes.draw do
   
-
-  get "microposts/create"
-  get "microposts/destroy"
   devise_for :users
   resources :users
   resources :messages
   resources :conversations
   resources :microposts, only: [:create, :destroy]
   resources :targetships
+
+  match 'accepter_contact', to: 'targetships#accept', via: 'get'
+  match 'refuser_contact', to: 'targetships#decline', via: 'get'
 
   match 'home', to: 'pages_statiques#home', via: 'get'
   match 'landing', to: 'pages_statiques#landing', via: 'get'
@@ -20,6 +20,7 @@ Jam::Application.routes.draw do
   match 'detruire_compte', to: 'users#destroy', via: 'delete'
   match 'reply', to: 'conversations#reply', via: 'post'
   match 'data', to: 'users#data', via: 'get'
+  match 'liste_requetes', to: 'targetships#demandes_contact', via: 'get'
 
   root 'pages_statiques#home'
   
