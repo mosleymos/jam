@@ -12,6 +12,7 @@
 					<%= t.name %>
 					<%= t.age %>
 					<%= t.ville %>
+					<%= link_to "Profil", user_path(id: t.id), class: "button"%>
 					<%= link_to "Accepter", accepter_contact_path(target_id: t.id), class: "button"%>
 					<%= link_to "Refuser", refuser_contact_path(target_id: t.id), class: "button"%>
 				</div>		

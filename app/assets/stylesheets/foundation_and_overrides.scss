@@ -1,10 +1,13 @@
-/* Background color for the top bar */
-/*$topbar-bg: #EB0C0C;*/
+/*top bar */
+
+/*Background color for the top bar */
+$topbar-bg: #900000;
 
 /* Height and margin */
-$topbar-height: 45px;
 $topbar-margin-bottom: rem-calc(30);
 
+$topbar-link-bg-hover: #B00000  ;
+$topbar-link-color-active: #fff;
 
 // 
 // FOUNDATION SETTINGS
