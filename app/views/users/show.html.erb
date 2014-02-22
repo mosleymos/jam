@@ -37,7 +37,7 @@
 				<% current_user.targetships.each do |t| %>
 					<% if @user.id!=t.target_id&&t.status==nil %>
 						<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%><%break%>
-					<%elsif t.status=="accepted"%>
+					<%elsif t.status=='accepted'%>
 						<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %><%break%>
 					<%end%>	
 				<%end%>
