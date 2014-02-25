@@ -9,6 +9,8 @@ gem 'mailboxer'
 
 gem 'pry-rails'
 
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

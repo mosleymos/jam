@@ -7,7 +7,9 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@user = User.all
+		# @user = User.all
+		@q = User.search(params[:q])
+  		@user = @q.result(distinct: true)
 	end
 		
 	def create

@@ -7,8 +7,15 @@ Jam::Application.routes.draw do
   resources :microposts, only: [:create, :destroy]
   resources :targetships
 
+  match 'detruire_compte', to: 'users#destroy', via: 'delete'
+  match 'data', to: 'users#data', via: 'get'
+  match 'search', to: 'users#search', via: 'get'
+
+  match 'reply', to: 'conversations#reply', via: 'post'
+
   match 'accepter_contact', to: 'targetships#accept', via: 'get'
   match 'refuser_contact', to: 'targetships#decline', via: 'get'
+  match 'liste_requetes', to: 'targetships#demandes_contact', via: 'get'
 
   match 'home', to: 'pages_statiques#home', via: 'get'
   match 'landing', to: 'pages_statiques#landing', via: 'get'
@@ -16,11 +23,6 @@ Jam::Application.routes.draw do
   match 'mentionslegales', to: 'pages_statiques#mentionslegales', via: 'get'
   match 'contact', to: 'pages_statiques#contact', via: 'get'
   match 'blog', to: 'pages_statiques#blog', via: 'get'
-
-  match 'detruire_compte', to: 'users#destroy', via: 'delete'
-  match 'reply', to: 'conversations#reply', via: 'post'
-  match 'data', to: 'users#data', via: 'get'
-  match 'liste_requetes', to: 'targetships#demandes_contact', via: 'get'
 
   root 'pages_statiques#home'
   

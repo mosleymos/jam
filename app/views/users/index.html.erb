@@ -4,12 +4,13 @@
 	<div class="small-4 column colonne_criteres panel">
 
 		<!-- formulaire de recherche  -->
-
+		<%= search_form_for @q do |f| %>
+		
 		<div class="bouton_recherche">
-			<%= link_to "Lancer la recherche", "#", class: "button" %>
+			<%= f.submit "Lancer la recherche", class: "button" %>
 		</div>
 
-		<div class="row">
+		<!-- <div class="row">
 			<div class="small-5 column">
 				<label for="sexe" class="center inline">Sexe</label>
 			</div>
@@ -19,10 +20,23 @@
 		          <option selected></option>
 		          <option value="Masculin">Masculin</option>
 		          <option value="Féminin">Féminin</option>
+		          <option value="Féminin">Autre</option>
 		        </select>
 		    </div> 
 		</div>
-		
+ -->
+		<div class="row">
+			
+				<div class="small-5 column">
+					<%= f.label(:sexe_cont, "Sexe", class: "inline")%>
+				</div>
+
+				<div class="small-7 column">
+			        <%= f.select(:sexe_cont, options_for_select([[nil, ''],['Masculin', 'masculin'], ['Féminin', 'feminin'], ['Autre', 'autre']], @q.sexe_cont)) %>
+			    </div>
+			 
+		</div>
+
 		<div class="row">
 			<div class="small-5 column">
 				<label for="orientation" class="center inline">Orientation</label>
@@ -204,7 +218,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="regime_alimentaire" class="center inline">Régime alimentaire</label>
+				<label for="regime_alimentaire" class="center inline">Régime</label>
 			</div>
 
 			<div class="small-7 column">
@@ -284,7 +298,7 @@
 			<%= link_to "Lancer la recherche", "#", class: "button" %>
 		</div>
 
-
+	<%end%>   
 
 	</div>
 
