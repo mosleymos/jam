@@ -24,7 +24,7 @@ class TargetshipsController < ApplicationController
 	def decline
 		@target=User.find(params[:target_id])
 		if current_user.requested_targets.include?(@target)
-			Targetship.breakup(current_user, target)
+			Targetship.breakup(current_user, @target)
 		else
 			flash[:notice] = "Pas de demande de contact de #{@target.name}."
 		end

@@ -1,16 +1,320 @@
+<h2>Zone de recherche</h2>
 <div class="row">
 
-	<div class="small-6 small-centered column">
+	<div class="small-4 column colonne_criteres panel">
 
-		<h2>Liste des utilisateurs</h2>
-		<ul>			
-			<% @user.each do |u| %>
-				<li class="list_users"><a href="/users/<%=u.id%>"><%= image_tag u.avatar.url(:thumb) %> <%=u.name%>
-					<%=u.age%> ans <%=u.ville%></a>
-				</li>
-			<%end%>
-		</ul>
-	
+		<!-- formulaire de recherche  -->
+
+		<div class="bouton_recherche">
+			<%= link_to "Lancer la recherche", "#", class: "button" %>
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="sexe" class="center inline">Sexe</label>
+			</div>
+
+			<div class="small-7 column">
+		        <select for="sexe">
+		          <option selected></option>
+		          <option value="Masculin">Masculin</option>
+		          <option value="Féminin">Féminin</option>
+		        </select>
+		    </div> 
+		</div>
+		
+		<div class="row">
+			<div class="small-5 column">
+				<label for="orientation" class="center inline">Orientation</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="orientation">
+					<option selected></option>
+		          	<option value="Hétérosexuel">Hétérosexuel</option>
+		          	<option value="Homosexuel">Homosexuel</option>
+		          	<option value="Bisexuel">Bisexuel</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="age_mini" class="center inline">Age</label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="age_mini" placeholder="Minimum" />
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="age_maxi" class="center inline"></label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="age_maxi" placeholder="Maximum" />
+		    </div> 
+		</div>
+	    
+	    <div class="row">
+			<div class="small-5 column">
+				<label for="localisation" class="center inline">Localisation</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="localisation">
+					<option selected></option>
+			        <option value=5>- de 5 km</option>
+			        <option value=10>- de 10 km</option>
+			        <option value=50>- de 50 km</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="avec_photo" class="center inline">Avec une photo</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="localisation">
+					<option selected></option>
+			        <option value="oui">Oui</option>
+			        <option value="non">Non</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="cheveux" class="center inline">Cheveux</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="cheveux">
+					<option selected></option>
+			        <option value="bruns">Bruns</option>
+			        <option value="chatains">Chatains</option>
+			        <option value="roux">Roux</option>
+			        <option value="blonds">Blonds</option>
+			        <option value="gris">Gris</option>
+			        <option value="blancs">Blancs</option>
+			        <option value="rares">Rares</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="yeux" class="center inline">Yeux</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="yeux">
+					<option selected></option>
+			        <option value="noirs">Noirs</option>
+			        <option value="marrons">Marrons</option>
+			        <option value="verts">Verts</option>
+			        <option value="bleus">Bleus</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="taille_mini" class="center inline">Taille</label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="taille_mini" placeholder="Minimum" />
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="taille_maxi" class="center inline"></label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="taille_maxi" placeholder="Maximum" />
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="type_physique" class="center inline">Type physique</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="type_physique">
+					<option selected></option>
+			        <option value="mince">Mince</option>
+			        <option value="sportif">Sportif(ve)</option>
+			        <option value="rond">Rond(e)</option>
+			        <option value="pulpeux">Pulpeux(se)</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="profession" class="center inline">Profession</label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="profession"/>
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="religion" class="center inline">Religion</label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="religion"/>
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="signe_astral" class="center inline">Signe astral</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="signe_astral">
+					<option selected></option>
+			        <option value="capricorne">Capricorne</option>
+			        <option value="verseau">Verseau</option>
+			        <option value="poissons">Poissons</option>
+			        <option value="belier">Bélier</option>
+   			        <option value="taureau">Taureau</option>
+			        <option value="gemeaux">Gémeaux</option>
+			        <option value="cancer">Cancer</option>
+			        <option value="lion">Lion</option>
+			        <option value="vierge">Vierge</option>
+			        <option value="balance">Balance</option>
+			        <option value="scorpion">Scorpion</option>
+			        <option value="sagitaire">Sagitaire</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="regime_alimentaire" class="center inline">Régime alimentaire</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="regime_alimentaire">
+					<option selected></option>
+			        <option value="tout">Mange de tout</option>
+			        <option value="vegetarien">Végétarien</option>
+			        <option value="vegetalien">Végétalien</option>
+			        <option value="interdits_religieux">Interdits religieux</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="badges" class="center inline">Badges</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="badges">
+					<option selected></option>
+			        <option value="1">1</option>
+			        <option value="2">2</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="resultat_test_1" class="center inline">Résultat test 1</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="resultat_test_1">
+					<option selected></option>
+			        <option value="1">1</option>
+			        <option value="2">2</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="resultat_test_2" class="center inline">Résultat test 2</label>
+			</div>
+
+			<div class="small-7 column">
+				<select for="resultat_test_1">
+					<option selected></option>
+			        <option value="1">1</option>
+			        <option value="2">2</option>
+		        </select>	
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="pseudo" class="center inline">Pseudo</label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="pseudo"/>
+		    </div> 
+		</div>
+
+		<div class="row">
+			<div class="small-5 column">
+				<label for="mot_cle" class="center inline">Mot clé</label>
+			</div>
+
+			<div class="small-7 column">
+				<input type="text" for="mot_cle"/>
+		    </div> 
+		</div>
+
+		<div class="bouton_recherche">
+			<%= link_to "Lancer la recherche", "#", class: "button" %>
+		</div>
+
+
+
 	</div>
 
+	<!-- affichage des résultats  -->
+	
+	<div class="small-4 column">
+		<% @user.each do |u| %>
+			<div class="item_list_users">
+				<%if u.id%2==1%>
+					<%= link_to user_path(u.id) do %>
+						<%= image_tag u.avatar.url(:thumb) %> <%=u.name%>
+							<%=u.age%> ans <%=u.ville%>
+					<%end%><br><hr>
+				<%end%>		
+			</div>
+		<%end%>	
+	</div>
+	
+
+	<div class="small-4 column">
+		<% @user.each do |u| %>
+			<div class="item_list_users">
+				<%if u.id%2==0%>
+					<%= link_to user_path(u.id) do %>
+						<%= image_tag u.avatar.url(:thumb) %> <%=u.name%>
+							<%=u.age%> ans <%=u.ville%>
+					<%end%><br><hr>
+				<%end%>		
+			</div>
+		<%end%>
+	</div>
+	
 </div>

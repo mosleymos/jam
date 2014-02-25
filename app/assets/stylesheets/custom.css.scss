@@ -164,10 +164,18 @@ h3 {
 
 /*page recherche*/
 
-.list_users {
+.item_list_users {
 	margin-top: 10px;
 }
 
+.colonne_criteres {
+	margin-top: 20px; 
+}
+
+.colonne_criteres .bouton_recherche {
+	text-align: center;
+	margin-top: 15px;
+}
 /*home page*/
 
 .row .home_bandeau {

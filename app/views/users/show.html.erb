@@ -27,21 +27,17 @@
 		<div class="small-3 small-offset-1 columns update">
 			
 			<% if @user==current_user %>
-				<a href="<%=current_user.id%>/edit" class="button">Modifier le profil</a>
+				<%= link_to "Modifier le profil", edit_user_path(:user_id => current_user.id), class: "button" %>
 			<%else%>
 				
-				<% if current_user.targetships.empty? %>
-					<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%>
-				<%end%>
-
-				<% current_user.targetships.each do |t| %>
-					<% if @user.id!=t.target_id&&t.status==nil %>
-						<%= link_to "Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%><%break%>
-					<%elsif t.status=='accepted'%>
-						<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %><%break%>
-					<%end%>	
-				<%end%>
-
+				<%if current_user.targets.include?(@user) %>
+					<%= link_to "Nouveau message", new_message_path(:user_id => @user.id), class: "button" %>
+				<%else%>
+					<%unless current_user.requested_targets.include?(@user)||current_user.pending_targets.include?(@user)%>
+						<%=link_to"Entrer en contact", targetships_path(:target_id => @user.id), :method => :post, class: "button"%>
+					<%end%>
+				<%end%>	
+				
 			<%end%>
 
 		</div>
