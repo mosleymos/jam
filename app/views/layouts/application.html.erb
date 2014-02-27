@@ -19,6 +19,7 @@
 
     <div class="row">
       <div class="small-2 column">
+        <%= if user_signed_in? then render 'layouts/level' end%>
         <%= if user_signed_in? then render 'layouts/isu' end%>
       </div>
       <div class="small-10 column">
