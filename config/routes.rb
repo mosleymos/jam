@@ -15,7 +15,7 @@ Jam::Application.routes.draw do
 
   match 'accepter_contact', to: 'targetships#accept', via: 'get'
   match 'refuser_contact', to: 'targetships#decline', via: 'get'
-  match 'liste_requetes', to: 'targetships#demandes_contact', via: 'get'
+  # match 'liste_requetes', to: 'targetships#demandes_contact', via: 'get'
 
   match 'home', to: 'pages_statiques#home', via: 'get'
   match 'landing', to: 'pages_statiques#landing', via: 'get'

@@ -14,14 +14,18 @@
 
   <body>
     <%= if user_signed_in? then render 'layouts/header' end%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+    
     <div class="row">
       <div class="small-2 column">
-        <%= if user_signed_in? then render 'layouts/level' end%>
-        <%= if user_signed_in? then render 'layouts/isu' end%>
+        <div class="row">
+          <div class="small-10 small-centered column">
+            <%= if user_signed_in? then render 'layouts/level' end%>
+            <%= if user_signed_in? then render 'layouts/isu' end%>
+          </div>
+        </div>
       </div>
+
+
       <div class="small-10 column">
         <%= yield %>
       </div>
