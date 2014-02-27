@@ -10,21 +10,6 @@
 			<%= f.submit "Lancer la recherche", class: "button" %>
 		</div>
 
-		<!-- <div class="row">
-			<div class="small-5 column">
-				<label for="sexe" class="center inline">Sexe</label>
-			</div>
-
-			<div class="small-7 column">
-		        <select for="sexe">
-		          <option selected></option>
-		          <option value="Masculin">Masculin</option>
-		          <option value="Féminin">Féminin</option>
-		          <option value="Féminin">Autre</option>
-		        </select>
-		    </div> 
-		</div>
- -->
 		<div class="row">
 			
 				<div class="small-5 column">
@@ -32,49 +17,44 @@
 				</div>
 
 				<div class="small-7 column">
-			        <%= f.select(:sexe_cont, options_for_select([[nil, ''],['Masculin', 'masculin'], ['Féminin', 'feminin'], ['Autre', 'autre']], @q.sexe_cont)) %>
+			        <%= f.select(:sexe_cont, options_for_select([[nil],['Masculin'], ['Féminin'], ['Autre']], @q.sexe_cont)) %>
 			    </div>
 			 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="orientation" class="center inline">Orientation</label>
+				<%= f.label(:orientation_cont, "Orientation", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<select for="orientation">
-					<option selected></option>
-		          	<option value="Hétérosexuel">Hétérosexuel</option>
-		          	<option value="Homosexuel">Homosexuel</option>
-		          	<option value="Bisexuel">Bisexuel</option>
-		        </select>	
+				<%= f.select(:orientation_cont, options_for_select([[nil],['Hétérosexuel'], ['Homosexuel'], ['Bisexuel']], @q.orientation_cont)) %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="age_mini" class="center inline">Age</label>
+				<%= f.label(:age_gt, "Age minimum", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<input type="text" for="age_mini" placeholder="Minimum" />
+				<%= f.number_field(:age_gt) %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="age_maxi" class="center inline"></label>
+				<%= f.label(:age_lt, "Age maximum", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<input type="text" for="age_maxi" placeholder="Maximum" />
+				<%= f.number_field(:age_lt) %>
 		    </div> 
 		</div>
 	    
 	    <div class="row">
 			<div class="small-5 column">
-				<label for="localisation" class="center inline">Localisation</label>
+				<label for="localisation" class="center inline">(Localisation)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -89,7 +69,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="avec_photo" class="center inline">Avec une photo</label>
+				<label for="avec_photo" class="center inline">(Avec une photo)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -103,78 +83,57 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="cheveux" class="center inline">Cheveux</label>
+				<%= f.label(:cheveux_cont, "Cheveux", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<select for="cheveux">
-					<option selected></option>
-			        <option value="bruns">Bruns</option>
-			        <option value="chatains">Chatains</option>
-			        <option value="roux">Roux</option>
-			        <option value="blonds">Blonds</option>
-			        <option value="gris">Gris</option>
-			        <option value="blancs">Blancs</option>
-			        <option value="rares">Rares</option>
-		        </select>	
+				<%= f.select(:cheveux_cont, options_for_select([[nil],['Bruns'], ['Châtains'], ['Roux'], ['Blonds'], ['Blancs'], ['Custom'], ['Rares']], @q.cheveux_cont)) %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="yeux" class="center inline">Yeux</label>
+				<%= f.label(:yeux_cont, "Yeux", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<select for="yeux">
-					<option selected></option>
-			        <option value="noirs">Noirs</option>
-			        <option value="marrons">Marrons</option>
-			        <option value="verts">Verts</option>
-			        <option value="bleus">Bleus</option>
-		        </select>	
+				<%= f.select(:yeux_cont, options_for_select([[nil],['Noirs'], ['Marrons'], ['Verts'], ['Bleus']], @q.yeux_cont)) %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="taille_mini" class="center inline">Taille</label>
+				<%= f.label(:taille_gt, "Taille minimum", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<input type="text" for="taille_mini" placeholder="Minimum" />
+				<%= f.number_field(:taille_gt, placeholder: "En centimètres") %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="taille_maxi" class="center inline"></label>
+				<%= f.label(:taille_lt, "Taille maximum", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<input type="text" for="taille_maxi" placeholder="Maximum" />
+				<%= f.number_field(:taille_lt, placeholder: "En centimètres") %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="type_physique" class="center inline">Type physique</label>
+				<%= f.label(:bodytype_cont, "Type physique", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<select for="type_physique">
-					<option selected></option>
-			        <option value="mince">Mince</option>
-			        <option value="sportif">Sportif(ve)</option>
-			        <option value="rond">Rond(e)</option>
-			        <option value="pulpeux">Pulpeux(se)</option>
-		        </select>	
+				<%= f.select(:bodytype_cont, options_for_select([[nil],['Mince'], ['Sportif'], ['Classique'], ['Rond'], ['Pulpeux']], @q.bodytype_cont)) %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="profession" class="center inline">Profession</label>
+				<label for="profession" class="center inline">(Profession)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -184,7 +143,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="religion" class="center inline">Religion</label>
+				<label for="religion" class="center inline">(Religion)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -194,31 +153,17 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="signe_astral" class="center inline">Signe astral</label>
+				<%= f.label(:astral_cont, "Signe Astral", class: "inline")%>
 			</div>
 
 			<div class="small-7 column">
-				<select for="signe_astral">
-					<option selected></option>
-			        <option value="capricorne">Capricorne</option>
-			        <option value="verseau">Verseau</option>
-			        <option value="poissons">Poissons</option>
-			        <option value="belier">Bélier</option>
-   			        <option value="taureau">Taureau</option>
-			        <option value="gemeaux">Gémeaux</option>
-			        <option value="cancer">Cancer</option>
-			        <option value="lion">Lion</option>
-			        <option value="vierge">Vierge</option>
-			        <option value="balance">Balance</option>
-			        <option value="scorpion">Scorpion</option>
-			        <option value="sagitaire">Sagitaire</option>
-		        </select>	
+				<%= f.select(:astral_cont, options_for_select([[nil],['Capricorne'], ['Verseau'], ['Poissons'], ['Bélier'], ['Taureau'], ['Gémeaux'], ['Cancer'], ['Lion'], ['Vierge'], ['Balance'], ['Scorpion'], ['Sagitaire']], @q.astral_cont)) %>
 		    </div> 
 		</div>
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="regime_alimentaire" class="center inline">Régime</label>
+				<label for="regime_alimentaire" class="center inline">(Régime)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -234,7 +179,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="badges" class="center inline">Badges</label>
+				<label for="badges" class="center inline">(Badges)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -248,7 +193,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="resultat_test_1" class="center inline">Résultat test 1</label>
+				<label for="resultat_test_1" class="center inline">(Résultat test 1)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -262,7 +207,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="resultat_test_2" class="center inline">Résultat test 2</label>
+				<label for="resultat_test_2" class="center inline">(Résultat test 2)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -276,7 +221,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="pseudo" class="center inline">Pseudo</label>
+				<label for="pseudo" class="center inline">(Pseudo)</label>
 			</div>
 
 			<div class="small-7 column">
@@ -286,7 +231,7 @@
 
 		<div class="row">
 			<div class="small-5 column">
-				<label for="mot_cle" class="center inline">Mot clé</label>
+				<label for="mot_cle" class="center inline">(Mot clé)</label>
 			</div>
 
 			<div class="small-7 column">

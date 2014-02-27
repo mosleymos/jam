@@ -6,6 +6,10 @@
 
       <%= form_for current_user do |f| %>
 
+        <div class="submit">
+          <%= f.submit "Enregistrer les modifications" %>
+        </div>
+
         <div class="avatar">
           <%= f.label :avatar %>
           <%= f.file_field :avatar %>
@@ -18,25 +22,25 @@
         <%= f.number_field :age %>
 
         <%= f.label :sexe %>
-        <%= f.text_field :sexe %>
+        <%= f.select(:sexe, options_for_select([[nil],['Masculin'], ['Féminin'], ['Autre']])) %>
 
         <%= f.label :orientation %>
-        <%= f.text_field :orientation %>
+        <%= f.select(:orientation, options_for_select([[nil],['Hétérosexuel'], ['Homosexuel'], ['Bisexuel']])) %>
 
         <%= f.label :ville %>
         <%= f.text_field :ville %>
 
         <%= f.label :cheveux %>
-        <%= f.text_field :cheveux %>
+        <%= f.select(:cheveux, options_for_select([[nil],['Bruns'], ['Châtains'], ['Roux'], ['Blonds'], ['Blancs'], ['Custom'], ['Rares']])) %>
 
         <%= f.label :yeux %>
-        <%= f.text_field :yeux %>
+        <%= f.select(:yeux, options_for_select([[nil],['Noirs'], ['Marrons'], ['Verts'], ['Bleus']])) %>
 
         <%= f.label :taille %>
-        <%= f.number_field :taille %>
+        <%= f.number_field :taille, placeholder: "en centimètres"%>
 
         <%= f.label "Type physique" %>
-        <%= f.text_field :bodytype %>
+        <%= f.select(:bodytype, options_for_select([[nil],['Mince'], ['Sportif'], ['Classique'], ['Rond'], ['Pulpeux']])) %>
 
         <%= f.label :profession %>
         <%= f.text_field :profession %>
@@ -45,7 +49,7 @@
         <%= f.text_field :religion %>
 
         <%= f.label "Signe astral" %>
-        <%= f.text_field :astral %>
+        <%= f.select(:astral, options_for_select([[nil],['Capricorne'], ['Verseau'], ['Poissons'], ['Bélier'], ['Taureau'], ['Gémeaux'], ['Cancer'], ['Lion'], ['Vierge'], ['Balance'], ['Scorpion'], ['Sagitaire']])) %>
 
         <div class="submit">
           <%= f.submit "Enregistrer les modifications" %>
